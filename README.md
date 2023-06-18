@@ -5,7 +5,7 @@
 
 ### *All the files in frontend repository are from src folder in the react project , so make sure after creating the react app use the code in the front end in the src folder*
 
-chatengine :chatengine.io
+chatengine :[chatengine.io](https://chatengine.io/)
 react-chat-engine-advanced : https://www.npmjs.com/package/react-chat-engine-advanced
 
 
