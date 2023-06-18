@@ -11,7 +11,7 @@ Not initate a new NodeJS project.
 
 npm init # Hit enter for every step
 Once complete, you’ll have the following package.json file.
-
+```
 {
   "name": "backend",
   "version": "1.0.0",
@@ -23,6 +23,7 @@ Once complete, you’ll have the following package.json file.
   "author": "Adam La Morre",
   "license": "ISC"
 }
+```
 To run a proper Node server which we can connect to, we’ll need to install a few dependencies. So run the following command
 
 # Withing the backend/ directory
@@ -43,7 +44,7 @@ Make sure we all the following script in package.json. This way we can actually 
     ...
 }
 Last step, create an index.js file next to package.json with the following boiler-plate code.
-
+```
 const express = require("express");
 const cors = require("cors");
 
@@ -57,6 +58,8 @@ app.post("/authenticate", async (req, res) => {
 });
 
 app.listen(3001);
+```
+
 And start this server by running: npm run start
 
 This basic server will run on port 3001, accepts calls from any origin, and has one API endpoint for /authenticate.
@@ -83,7 +86,7 @@ Back in our index.js file, we’ll use this Get or Create User API call. It take
 (Docs on all Chat Engine APIs are at rest.chatengine.io)
 
 Add the following code to the /authenticate function in index.js:
-
+```
 const axios = require("axios");
 
 app.post("/authenticate", async (req, res) => {
@@ -100,6 +103,7 @@ app.post("/authenticate", async (req, res) => {
     return res.status(e.response.status).json(e.response.data);
   }
 });
+```
 Here, we import axios to make an API call the Chat Engine. We use the “Get or Create User” call to fetch or create this user - depending on if they already exists.
 
 Be sure to replace "XXXX" with your Private Key so we can create users on your project.
@@ -121,7 +125,7 @@ Now your nodejs-reactjs-chat should have the following structure:
 ├── backend
 └── frontend
 First, open the frontend/src/main.jsx file to remove the index.css file and take React off StrictMode. Your main.jsx file should look like this now:
-
+```
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -149,8 +153,9 @@ function App() {
 }
 
 export default App;
+```
 This new App.jsx file will render the Authentication Page until a user logs in or signs up. Then, the onAuth() callback will set the user state, and render the Chats Page (and pass the user state in as a prop).
-
+```
 Create a frontend/src/AuthPage.jsx file and add the following code:
 
 const AuthPage = (props) => {
@@ -180,20 +185,25 @@ const AuthPage = (props) => {
 };
 
 export default AuthPage;
+```
 This Auth Page is just a form with one input for a username. In the next section we’ll connect this form to our Node JS server with API calls.
 
 Finally, for our Chats Page, just set the frontend/src/ChatsPage.jsx file to an empty component for now:
 
+```
 const ChatsPage = () => {
   return <div className="background">chats...</div>;
 };
 export default ChatsPage;
+```
 ‼️ You can also copy/paste the following CSS code to frontend/src/App.css if you wish ‼️
 
 Run the React JS app with these commands:
 
+```
 npm install # install all dependencies first
 npm run dev
+```
 Once done, you will have the following Chat App:
 
 Chat Engine Node JS auth Gif
@@ -208,12 +218,14 @@ Part 4. Connect React to Node JS and Chat Engine
 First, let’s connect the auth form to our Node JS server so we can Get or Create users from our Chat Engine project.
 
 Within frontend/ install the axios dependency with the following command:
-
+```
 npm install axios
+```
 Within frontend/src/AuthPage.jsx add the code below.
 
 This new code will call the NodeJS server at http://localhost:3001/authenticate upon onSubmit(), and send the required username in a request body. This should login and signup new users.
 
+```
 import axios from "axios";
 
 const AuthPage = (props) => {
@@ -246,6 +258,7 @@ const AuthPage = (props) => {
 };
 
 export default AuthPage;
+```
 Last, to connect our Chats Page to Chat Engine, we can use one of their prebuilt UIs.
 
 react-chat-engine-pretty is an easy to use, midnight UI
@@ -259,6 +272,7 @@ npm install react-chat-engine-advanced
 
 ChatsPage.jsx
 
+```
 import { MultiChatSocket , MultiChatWindow , useMultiChatLogic } from "react-chat-engine-advanced";
 
 const ChatsPage = (props) => {
@@ -273,7 +287,7 @@ const ChatsPage = (props) => {
 }
 
 export default ChatsPage
-
+```
 After Completion to run the project use 2 terminals :
 1. frontend> npm run dev
 2. backend> npm start
