@@ -1,5 +1,7 @@
 # RealTime_ChatApp
 
+###*All the files in frontend repository are from src folder in the react project , so make sure after creating the react app use the code in the front end in the src folder*
+
 #### Step 1. 
 Setting up a NodeJS server
 First, let’s create a new project for our backend/ and frontend/. Then we’ll start with setting up our Node JS backend inside.
