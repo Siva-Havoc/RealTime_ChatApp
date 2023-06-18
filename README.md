@@ -1,5 +1,8 @@
 # RealTime_ChatApp
 
+![Screenshot (5)](https://github.com/Siva-Havoc/RealTime_ChatApp/assets/92218025/c25de021-ff86-4aec-b2a0-9ec2c27a5f1c)
+
+
 ### *All the files in frontend repository are from src folder in the react project , so make sure after creating the react app use the code in the front end in the src folder*
 
 #### Step 1. 
