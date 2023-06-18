@@ -1,6 +1,7 @@
 # RealTime_ChatApp
 
-Step 1. Setting up a NodeJS server
+#### Step 1. 
+Setting up a NodeJS server
 First, let’s create a new project for our backend/ and frontend/. Then we’ll start with setting up our Node JS backend inside.
 
 mkdir nodejs-reactjs-chat
@@ -68,7 +69,8 @@ This endpoint takes a username from the request body, and retuns a fake User obj
 
 Clearly we’ll need to add real user authentication code. In the next section, we’ll do that by using Chat Engine’s APIs.
 
-Step 2. Connecting Node JS to ChatEngine.io
+#### Step 2.
+Connecting Node JS to ChatEngine.io
 ChatEngine.io provides full-stack chat tools - which makes adding chat into Node apps easy.
 
 To leverage this tool, we’ll create a Chat Engine project, and store our users in this project. All users in our Chat Engine project can chat with one another through their APIs / platform.
@@ -112,7 +114,8 @@ Now this endpoint will register / authenticate users into our Chat Engine projec
 
 To let users in our project can actually chat with one another, let’s add a chat UI + funtionality to our frontend in React!
 
-Step 3. Set up a React JS frontend
+#### Step 3.
+Set up a React JS frontend
 Back at the top-level of our project, we’ll use Vite to stand up a React JS project. Run the following command:
 
 npm create vite@latest
@@ -214,7 +217,8 @@ Connect with Auth Page form to our /authenticate endpoint on Node JS
 Render a Chats Page chat UI and connect it to Chat Engine
 Then we’re fully done.
 
-Part 4. Connect React to Node JS and Chat Engine
+#### Step 4.
+Connect React to Node JS and Chat Engine
 First, let’s connect the auth form to our Node JS server so we can Get or Create users from our Chat Engine project.
 
 Within frontend/ install the axios dependency with the following command:
